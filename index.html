@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Мисс Ванилька — кондитерская-пекарня</title>
+<meta name="description" content="Мисс Ванилька — кондитерская-пекарня. Кофе, матча, горячий шоколад и слишком хорошие десерты.">
+<meta name="theme-color" content="#1E120B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Unbounded:wght@300;400;600;800;900&family=Onest:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=10">
+</head>
+<body>
+
+<!-- ══ прелоадер ══ -->
+<div class="boot" id="boot" aria-hidden="true">
+  <div class="boot__panel boot__panel--t"></div>
+  <div class="boot__panel boot__panel--b"></div>
+  <div class="boot__core">
+    <svg class="boot__bean" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="50" rx="30" ry="42" transform="rotate(-28 50 50)" fill="currentColor"/>
+      <path d="M50 10 C 34 30, 66 70, 50 90" stroke="#1E120B" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="boot__num" id="bootNum">00</span>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+<div class="scrollbar" aria-hidden="true"><i id="scrollbarFill"></i></div>
+
+<!-- ══ полноэкранное меню ══ -->
+<nav class="navmenu" id="navmenu" aria-hidden="true">
+  <div class="navmenu__panel">
+    <p class="navmenu__eyebrow">МИСС ВАНИЛЬКА · КОНДИТЕРСКАЯ-ПЕКАРНЯ</p>
+    <ul class="navmenu__list">
+      <li style="--n:0"><a href="#hero"><span class="navmenu__i">00</span>Главная</a></li>
+      <li style="--n:1"><a href="#menu"><span class="navmenu__i">01</span>Меню</a></li>
+      <li style="--n:2"><a href="#story"><span class="navmenu__i">02</span>О нас</a></li>
+      <li style="--n:3"><a href="#roast"><span class="navmenu__i">03</span>Кофе</a></li>
+      <li style="--n:4"><a href="#place"><span class="navmenu__i">04</span>Где мы</a></li>
+    </ul>
+    <div class="navmenu__foot">
+      <a href="tel:+78129000505" data-cursor="звонок">+7 (812) 900-05-05</a>
+      <a href="mailto:hey@missvanilka.ru" data-cursor="почта">hey@missvanilka.ru</a>
+    </div>
+  </div>
+</nav>
+  <button class="navmenu__close" id="navClose" type="button" aria-label="Закрыть меню" data-cursor="закрыть">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 12 L28 28 M28 12 L12 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+  </button>
+
+<div class="shell" id="shell">
+<div class="shell__inner" id="shellInner">
+<!-- ══ навигация ══ -->
+<header class="nav">
+  <a class="nav__mark" href="#hero" aria-label="Мисс Ванилька — на главную" data-cursor="наверх">
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <path d="M 50.0 47.0 L 50.4 46.8 L 50.8 46.6 L 51.2 46.5 L 51.7 46.4 L 52.2 46.5 L 52.7 46.5 L 53.2 46.7 L 53.7 46.9 L 54.2 47.2 L 54.7 47.6 L 55.2 48.0 L 55.6 48.6 L 55.9 49.2 L 56.2 49.8 L 56.4 50.5 L 56.6 51.3 L 56.6 52.0 L 56.6 52.8 L 56.4 53.7 L 56.2 54.5 L 55.8 55.3 L 55.3 56.1 L 54.8 56.8 L 54.1 57.5 L 53.4 58.1 L 52.5 58.7 L 51.6 59.1 L 50.6 59.5 L 49.5 59.7 L 48.4 59.8 L 47.3 59.8 L 46.2 59.7 L 45.0 59.4 L 43.9 59.0 L 42.8 58.4 L 41.7 57.8 L 40.8 56.9 L 39.9 56.0 L 39.0 54.9 L 38.3 53.8 L 37.8 52.5 L 37.3 51.2 L 37.1 49.8 L 36.9 48.3 L 37.0 46.9 L 37.2 45.4 L 37.5 43.9 L 38.1 42.4 L 38.8 41.0 L 39.7 39.7 L 40.8 38.5 L 41.9 37.3 L 43.3 36.3 L 44.8 35.4 L 46.3 34.7 L 48.0 34.2 L 49.7 33.8 L 51.5 33.7 L 53.4 33.7 L 55.2 34.0 L 57.0 34.4 L 58.8 35.1 L 60.5 36.0 L 62.2 37.0 L 63.7 38.3 L 65.1 39.7 L 66.3 41.3 L 67.4 43.1 L 68.3 45.0 L 69.0 47.0 L 69.4 49.1 L 69.6 51.2 L 69.6 53.4 L 69.3 55.6 L 68.8 57.8 L 68.0 59.9 L 67.0 62.0 L 65.8 63.9 L 64.3 65.7 L 62.6 67.4 L 60.8 68.9 L 58.7 70.2 L 56.5 71.2 L 54.2 72.0 L 51.8 72.6 L 49.3 72.9 L 46.7 72.9 L 44.2 72.6 L 41.7 72.1 L 39.2 71.2 L 36.8 70.1 L 34.5 68.7 L 32.4 67.1 L 30.5 65.2 L 28.7 63.0 L 27.2 60.7 L 25.9 58.2 L 25.0 55.6 L 24.3 52.8 L 23.9 50.0 L 23.8 47.1 L 24.1 44.2 L 24.6 41.3 L 25.5 38.5 L 26.7 35.7 L 28.3 33.1 L 30.1 30.7 L 32.2 28.4 L 34.5 26.4 L 37.1 24.7 L 39.9 23.2 L 42.8 22.0 L 45.9 21.2 L 49.1 20.7 L 52.3 20.5 L 55.6 20.7 L 58.8 21.3 L 62.0 22.2 L 65.1 23.5 L 68.1 25.1 L 70.9 27.1 L 73.4 29.4 L 75.7 31.9 L 77.8 34.7 L 79.5 37.8 L 80.9 41.0 L 81.9 44.4 L 82.5 48.0 L 82.8 51.5 L 82.7 55.2 L 82.1 58.8 L 81.2 62.3 L 79.8 65.8 L 78.1 69.1 L 76.0 72.2 L 73.6 75.1 L 70.8 77.7 L 67.8 80.1 L 64.5 82.0 L 60.9 83.6 L 57.2 84.9 L 53.4 85.7 L 49.4 86.1 L 45.5 86.0 L 41.5 85.5 L 37.5 84.6 L 33.7 83.2 L 30.1 81.4 L 26.6 79.2 L 23.4 76.6 L 20.4 73.7 L 17.8 70.4 L 15.5 66.9 L 13.7 63.1 L 12.2 59.1 L 11.2 54.9 L 10.7 50.6 L 10.6 46.3 L 11.1 41.9 L 12.0 37.6" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+    </svg>
+  </a>
+  <nav class="nav__links">
+    <a href="#menu" data-cursor="меню">Заказать</a>
+    <a href="#roast" data-cursor="обжарка">Кофе с собой</a>
+    <a href="#place" data-cursor="адрес">Где мы</a>
+  </nav>
+  <button class="nav__burger" id="navToggle" type="button"
+          aria-label="Открыть меню" aria-expanded="false" aria-controls="navmenu"
+          data-cursor="меню"><i></i><i></i></button>
+</header>
+
+<main>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="hero">
+  <div class="stage" data-speed=".4">
+    <div class="panel">
+      <svg class="panel__mark" viewBox="0 0 600 600" aria-hidden="true">
+        <path d="M 300.0 288.0 L 300.8 287.2 L 301.7 286.5 L 302.7 285.9 L 303.8 285.3 L 304.9 284.8 L 306.2 284.4 L 307.5 284.1 L 308.9 283.9 L 310.3 283.8 L 311.8 283.8 L 313.3 284.0 L 314.8 284.3 L 316.3 284.7 L 317.9 285.2 L 319.4 285.9 L 320.9 286.7 L 322.4 287.7 L 323.9 288.8 L 325.3 290.0 L 326.6 291.3 L 327.9 292.8 L 329.1 294.5 L 330.2 296.2 L 331.1 298.0 L 332.0 300.0 L 332.7 302.1 L 333.3 304.2 L 333.8 306.4 L 334.1 308.8 L 334.2 311.1 L 334.2 313.5 L 334.0 316.0 L 333.7 318.5 L 333.1 321.0 L 332.4 323.5 L 331.4 326.0 L 330.3 328.5 L 329.0 330.9 L 327.5 333.3 L 325.9 335.6 L 324.0 337.8 L 322.0 340.0 L 319.8 342.0 L 317.4 343.9 L 314.8 345.7 L 312.1 347.3 L 309.3 348.7 L 306.3 350.0 L 303.2 351.1 L 300.0 352.0 L 296.7 352.7 L 293.3 353.2 L 289.8 353.4 L 286.3 353.5 L 282.7 353.3 L 279.1 352.8 L 275.5 352.1 L 271.9 351.2 L 268.3 350.0 L 264.7 348.5 L 261.2 346.8 L 257.8 344.9 L 254.5 342.7 L 251.3 340.3 L 248.2 337.6 L 245.3 334.7 L 242.5 331.6 L 239.9 328.3 L 237.5 324.7 L 235.3 321.0 L 233.4 317.1 L 231.6 313.0 L 230.2 308.8 L 228.9 304.5 L 228.0 300.0 L 227.3 295.4 L 227.0 290.8 L 226.9 286.1 L 227.2 281.3 L 227.7 276.5 L 228.6 271.7 L 229.8 267.0 L 231.3 262.2 L 233.1 257.6 L 235.3 253.0 L 237.7 248.5 L 240.5 244.1 L 243.6 239.9 L 247.0 235.9 L 250.6 232.0 L 254.6 228.4 L 258.8 225.0 L 263.2 221.8 L 267.9 218.9 L 272.8 216.3 L 277.9 214.0 L 283.2 212.0 L 288.7 210.3 L 294.3 209.0 L 300.0 208.0 L 305.8 207.4 L 311.7 207.1 L 317.7 207.3 L 323.7 207.8 L 329.7 208.7 L 335.6 210.0 L 341.6 211.7 L 347.4 213.8 L 353.2 216.2 L 358.8 219.1 L 364.3 222.3 L 369.5 225.9 L 374.6 229.9 L 379.5 234.2 L 384.1 238.9 L 388.5 243.8 L 392.5 249.1 L 396.3 254.7 L 399.7 260.5 L 402.7 266.6 L 405.4 272.9 L 407.7 279.5 L 409.5 286.2 L 411.0 293.0 L 412.0 300.0 L 412.6 307.1 L 412.7 314.2 L 412.4 321.4 L 411.6 328.6 L 410.3 335.8 L 408.6 343.0 L 406.4 350.1 L 403.8 357.0 L 400.6 363.9 L 397.1 370.5 L 393.1 377.0 L 388.6 383.2 L 383.8 389.2 L 378.5 394.9 L 372.9 400.3 L 366.9 405.4 L 360.5 410.1 L 353.8 414.4 L 346.8 418.3 L 339.6 421.7 L 332.0 424.8 L 324.3 427.3 L 316.3 429.4 L 308.2 430.9 L 300.0 432.0 L 291.7 432.5 L 283.3 432.5 L 274.8 432.0 L 266.4 431.0 L 258.0 429.3 L 249.6 427.2 L 241.4 424.5 L 233.3 421.3 L 225.4 417.5 L 217.7 413.3 L 210.3 408.5 L 203.1 403.2 L 196.2 397.5 L 189.7 391.3 L 183.5 384.6 L 177.7 377.6 L 172.4 370.1 L 167.5 362.3 L 163.1 354.2 L 159.2 345.7 L 155.9 337.0 L 153.0 328.0 L 150.8 318.9 L 149.1 309.5 L 148.0 300.0 L 147.5 290.4 L 147.6 280.7 L 148.3 271.1 L 149.7 261.4 L 151.6 251.8 L 154.2 242.3 L 157.4 232.9 L 161.2 223.7 L 165.6 214.7 L 170.6 206.0 L 176.1 197.5 L 182.2 189.4 L 188.8 181.6 L 196.0 174.3 L 203.6 167.3 L 211.7 160.9 L 220.2 154.9 L 229.2 149.4 L 238.4 144.5 L 248.1 140.2 L 258.0 136.5 L 268.2 133.4 L 278.6 130.9 L 289.3 129.1 L 300.0 128.0 L 310.9 127.5 L 321.8 127.8 L 332.7 128.7 L 343.6 130.3 L 354.4 132.6 L 365.1 135.6 L 375.6 139.3 L 385.9 143.7 L 396.0 148.7 L 405.8 154.4 L 415.2 160.7 L 424.3 167.6 L 433.0 175.1 L 441.2 183.2 L 448.9 191.8 L 456.0 201.0 L 462.6 210.6 L 468.7 220.6 L 474.1 231.1 L 478.8 241.9 L 482.9 253.0 L 486.2 264.5 L 488.9 276.1 L 490.8 288.0 L 492.0 300.0 L 492.4 312.1 L 492.1 324.3 L 491.0 336.4 L 489.1 348.5 L 486.4 360.6 L 483.0 372.4 L 478.8 384.1 L 473.9 395.6 L 468.2 406.7 L 461.8 417.6 L 454.7 428.0 L 447.0 438.0 L 438.6 447.5 L 429.5 456.6 L 419.9 465.0 L 409.7 472.9 L 399.0 480.2 L 387.9 486.8 L 376.3 492.6 L 364.3 497.8 L 351.9 502.2 L 339.3 505.9 L 326.4 508.7 L 313.3 510.8 L 300.0 512.0 L 286.6 512.4 L 273.2 511.9 L 259.8 510.6 L 246.5 508.4 L 233.3 505.4 L 220.2 501.6 L 207.4 496.9 L 194.8 491.4 L 182.5 485.1 L 170.7 478.0 L 159.3 470.1 L 148.3 461.5 L 137.9 452.2 L 128.0 442.3 L 118.8 431.7 L 110.2 420.5 L 102.3 408.7 L 95.1 396.4 L 88.8 383.6 L 83.2 370.5 L 78.4 356.9 L 74.5 343.0 L 71.4 328.9 L 69.3 314.5 L 68.0 300.0 L 67.7 285.4 L 68.2 270.7 L 69.8 256.1 L 72.2 241.5 L 75.6 227.1 L 79.8 212.8 L 85.0 198.8 L 91.1 185.1 L 98.0 171.8 L 105.8 158.9 L 114.5 146.5 L 123.9 134.6 L 134.1 123.3 L 145.0 112.6 L 156.6 102.6 L 168.8 93.3 L 181.7 84.8 L 195.1 77.1 L 209.0 70.2 L 223.4 64.1 L 238.1 59.0 L 253.2 54.8 L 268.6 51.6 L 284.2 49.3 L 300.0 48.0 L 315.9 47.7 L 331.8 48.4 L 347.7 50.1 L 363.5 52.8 L 379.1 56.5 L 394.5 61.2 L 409.7 66.9 L 424.5 73.6 L 438.9 81.2 L 452.8 89.7 L 466.2 99.1 L 479.1 109.3 L 491.3 120.4 L 502.8 132.2 L 513.6 144.8 L 523.6 158.1 L 532.7 172.0 L 541.0 186.6 L 548.4 201.6 L 554.9 217.2" fill="none" stroke="currentColor" stroke-width="54" stroke-linecap="round"/>
+      </svg>
+      <p class="panel__eyebrow" data-split="chars">КОНДИТЕРСКАЯ · ПЕКАРНЯ</p>
+      <h1 class="panel__word" data-split="chars" data-stagger="0.045">ВАНИЛЬКА</h1>
+    </div>
+
+    <!-- стакан -->
+    <div class="cupstage" id="cupstage" data-speed=".05">
+      <picture class="cup" data-cursor="ммм">
+        <source srcset="assets/cup.webp" type="image/webp">
+        <img src="assets/cup.png" width="560" height="744" alt="Стакан кофе «Мисс Ванилька»" fetchpriority="high">
+      </picture>
+    </div>
+
+    <!-- зёрна и выпечка -->
+    <div class="floats" aria-hidden="true">
+      <span class="float" style="--x:27%;--y:18%;--w:clamp(78px,9.5vw,170px);--r:-10deg"
+            data-speed="-0.18" data-spin="20">
+        <picture>
+          <source srcset="assets/cinnabon.webp" type="image/webp">
+          <img src="assets/cinnabon.png" width="340" height="322" alt="Булочка с корицей" loading="eager" decoding="async">
+        </picture>
+      </span>
+      <span class="float" style="--x:16%;--y:76%;--w:clamp(84px,10.5vw,190px);--r:-15deg"
+            data-speed="0.21" data-spin="16">
+        <picture>
+          <source srcset="assets/cake.webp" type="image/webp">
+          <img src="assets/cake.png" width="340" height="338" alt="Кусок торта" loading="eager" decoding="async">
+        </picture>
+      </span>
+      <span class="float" style="--x:81%;--y:52%;--w:clamp(88px,11vw,200px);--r:12deg"
+            data-speed="-0.24" data-spin="-22">
+        <picture>
+          <source srcset="assets/donut.webp" type="image/webp">
+          <img src="assets/donut.png" width="340" height="233" alt="Пончик" loading="eager" decoding="async">
+        </picture>
+      </span>
+    </div>
+  </div>
+
+  <a class="scrollhint" href="#menu" data-cursor="вниз">
+    <span>ЛИСТАЙ</span>
+    <svg viewBox="0 0 24 40" aria-hidden="true"><path d="M12 2 V34 M4 26 L12 36 L20 26" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+
+</section>
+
+<!-- волна-переход: передний план, наезжает на hero при скролле -->
+<div class="wavelead" aria-hidden="true">
+  <svg class="wave" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+    <path class="wave__a" d="M0,116 C 220,84 380,142 640,116 C 900,94 1120,86 1440,116 L1440,220 L0,220Z"><animate attributeName="d" dur="11s" repeatCount="indefinite" values="M0,116 C 220,84 380,142 640,116 C 900,94 1120,86 1440,116 L1440,220 L0,220Z;M0,104 C 220,70 380,128 640,136 C 900,112 1120,70 1440,104 L1440,220 L0,220Z;M0,128 C 220,98 380,134 640,104 C 900,86 1120,98 1440,128 L1440,220 L0,220Z;M0,116 C 220,84 380,142 640,116 C 900,94 1120,86 1440,116 L1440,220 L0,220Z" keyTimes="0;0.33;0.66;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/></path>
+    <path class="wave__b" d="M0,150 C 220,118 380,176 640,150 C 900,128 1120,120 1440,150 L1440,220 L0,220Z"><animate attributeName="d" dur="11s" repeatCount="indefinite" values="M0,150 C 220,118 380,176 640,150 C 900,128 1120,120 1440,150 L1440,220 L0,220Z;M0,138 C 220,104 380,162 640,170 C 900,146 1120,104 1440,138 L1440,220 L0,220Z;M0,162 C 220,132 380,168 640,138 C 900,120 1120,132 1440,162 L1440,220 L0,220Z;M0,150 C 220,118 380,176 640,150 C 900,128 1120,120 1440,150 L1440,220 L0,220Z" keyTimes="0;0.33;0.66;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"/></path>
+  </svg>
+</div>
+
+<!-- ══════════ БЕГУЩАЯ СТРОКА ══════════ -->
+<section class="ticker" id="ticker" aria-hidden="true">
+  <div class="ticker__track" id="tickerTrack">
+    <div class="ticker__row">
+      <span>СВЕЖАЯ ВЫПЕЧКА</span><b>✳</b><span>КОФЕ С СОБОЙ</span><b>✳</b><span>МАТЧА НА МОЛОКЕ</span><b>✳</b><span>СЕКРЕТНЫЙ ИНГРЕДИЕНТ — ЛЮБОВЬ</span><b>✳</b>
+    </div>
+    <div class="ticker__row">
+      <span>СВЕЖАЯ ВЫПЕЧКА</span><b>✳</b><span>КОФЕ С СОБОЙ</span><b>✳</b><span>МАТЧА НА МОЛОКЕ</span><b>✳</b><span>СЕКРЕТНЫЙ ИНГРЕДИЕНТ — ЛЮБОВЬ</span><b>✳</b>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ МЕНЮ · стопка карточек ══════════ -->
+<section class="menu" id="menu">
+  <div class="menu__intro">
+    <div>
+      <p class="tag">01 — МЕНЮ</p>
+      <h2 class="menu__h" data-reveal="lines">Всё<br>горячее</h2>
+    </div>
+    <p class="menu__note" data-reveal>Кофе, чай и всё остальное. Листай — карточки складываются в стопку, как стаканы у кассы.</p>
+  </div>
+
+  <div class="stack">
+    <article class="card" style="--i:0">
+      <header class="card__top"><h3>Кофе</h3><span class="card__num">01</span></header>
+      <ul class="list">
+        <li data-cursor="взять"><span class="list__n">ЭСПРЕССО</span><span class="list__d">30 · 60 мл</span><span class="list__p">60/80 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">АМЕРИКАНО</span><span class="list__d">160 · 200 мл</span><span class="list__p">170 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">КАПУЧИНО</span><span class="list__d">250 · 350 мл</span><span class="list__p">220/250 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">ФЛЭТ УАЙТ</span><span class="list__d">200 мл</span><span class="list__p">230 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">ЛАТТЕ</span><span class="list__d">350 · 450 мл</span><span class="list__p">240 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">РАФ</span><span class="list__d">350 · 450 мл</span><span class="list__p">280/300 ₽</span></li>
+      </ul>
+    </article>
+
+    <article class="card card--cream" style="--i:1">
+      <header class="card__top"><h3>Чай</h3><span class="card__num">02</span></header>
+      <ul class="list">
+        <li data-cursor="взять"><span class="list__n">МАТЧА</span><span class="list__d">на молоке или воде</span><span class="list__p">250 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">ТРАВЯНОЙ</span><span class="list__d">350 мл</span><span class="list__p">150 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">ЧЁРНЫЙ КЛАССИЧЕСКИЙ</span><span class="list__d">350 мл</span><span class="list__p">150 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">ЗЕЛЁНЫЙ КЛАССИЧЕСКИЙ</span><span class="list__d">350 мл</span><span class="list__p">150 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">УЛУН МОЛОЧНЫЙ</span><span class="list__d">350 мл</span><span class="list__p">150 ₽</span></li>
+      </ul>
+    </article>
+
+    <article class="card card--flame" style="--i:2">
+      <header class="card__top"><h3>Ещё</h3><span class="card__num">03</span></header>
+      <ul class="list">
+        <li data-cursor="взять"><span class="list__n">ГОРЯЧИЙ ШОКОЛАД</span><span class="list__d">350 мл</span><span class="list__p">250 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">МОЛОЧНЫЙ КОКТЕЙЛЬ</span><span class="list__d">400 мл</span><span class="list__p">300 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">СИРОП / МАРШМЕЛЛОУ</span><span class="list__d">добавка</span><span class="list__p">35/20 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">МОЛОКО / СЛИВКИ</span><span class="list__d">добавка</span><span class="list__p">30/50 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">ЛИМОН</span><span class="list__d">добавка</span><span class="list__p">20 ₽</span></li>
+        <li data-cursor="взять"><span class="list__n">АЛЬТ. МОЛОКО</span><span class="list__d">добавка</span><span class="list__p">70 ₽</span></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ══════════ О НАС ══════════ -->
+<section class="about" id="story">
+  <div class="about__inner">
+  <figure class="about__photo" data-reveal>
+    <picture>
+      <source srcset="assets/about.webp" type="image/webp">
+      <img src="assets/about.jpg" width="900" height="1227" alt="За стойкой «Мисс Ванилька»" loading="lazy" decoding="async">
+    </picture>
+  </figure>
+
+  <div class="about__text">
+    <span class="about__badge" data-reveal>О НАС</span>
+    <h2 class="about__sub" data-reveal>Уютное место, мимо которого не пройти</h2>
+    <div class="about__body" data-reveal>
+      <p>«Мисс Ванилька» выросла из простой идеи: чтобы по дороге домой всегда было где остановиться на чашку кофе и тёплую булочку с корицей.</p>
+      <p>Мы печём каждое утро — синнамон-роллы, баскские чизкейки, эклеры — и варим кофе на зерне свежей обжарки. Матча, раф на халве, горячий шоколад — всё как надо, без компромиссов.</p>
+      <p>Заходите просто так: за десертом с собой, за неспешным завтраком или чтобы согреться в непогоду. Здесь по-домашнему и без спешки.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ══════════ ОБЖАРКА · интерактив ══════════ -->
+<section class="roast" id="roast">
+  <div class="roast__head">
+    <p class="tag tag--light">02 — ОБЖАРКА</p>
+    <h2 class="roast__h" data-reveal="lines">Наша<br>обжарка</h2>
+  </div>
+
+  <div class="roast__body">
+    <div class="roast__visual">
+      <div class="beanwrap" id="beanwrap">
+        <div class="beanglow"></div>
+        <picture class="beanbig">
+          <source srcset="assets/bean.webp" type="image/webp">
+          <img src="assets/bean.png" width="560" height="586" alt="Кофейное зерно" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    </div>
+
+    <div class="roast__panel">
+      <output class="roast__level" id="roastLevel">СРЕДНЯЯ</output>
+      <p class="roast__notes" id="roastNotes">Молочный шоколад, лесной орех, чёрная смородина на излёте.</p>
+
+      <div class="slider">
+        <input type="range" id="roastRange" min="0" max="100" value="50" step="1" aria-label="Степень обжарки">
+        <div class="slider__labels"><span>СВЕТЛАЯ</span><span>СРЕДНЯЯ</span><span>ТЁМНАЯ</span></div>
+      </div>
+
+      <dl class="specs">
+        <div><dt>ТЕМПЕРАТУРА</dt><dd id="roastTemp">205 °C</dd></div>
+        <div><dt>ВРЕМЯ</dt><dd id="roastTime">11:40</dd></div>
+        <div><dt>КИСЛОТНОСТЬ</dt><dd id="roastAcid">●●●●○○○</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ РИТУАЛ · горизонтальный скролл ══════════ -->
+<section class="ritual" id="ritual">
+  <div class="ritual__pin">
+    <div class="ritual__track" id="ritualTrack">
+
+      <div class="rpanel rpanel--intro">
+        <p class="tag">03 — РИТУАЛ</p>
+        <h2 class="rpanel__h">Четыре<br>шага<br>до чашки</h2>
+        <p class="rpanel__p">Скроллишь вниз — едет вбок.</p>
+      </div>
+
+      <article class="rpanel">
+        <span class="rpanel__idx">01</span>
+        <svg class="ico" viewBox="0 0 120 120" aria-hidden="true">
+          <ellipse cx="60" cy="60" rx="34" ry="48" transform="rotate(-24 60 60)"/>
+          <path d="M60 15 C 42 38, 78 82, 60 105"/>
+        </svg>
+        <h3>Зерно</h3>
+        <p>Три фермы, прямой контракт. Мешок приезжает с именем человека, который его вырастил.</p>
+      </article>
+
+      <article class="rpanel">
+        <span class="rpanel__idx">02</span>
+        <svg class="ico" viewBox="0 0 120 120" aria-hidden="true">
+          <path d="M60 16 C 84 44, 96 58, 96 74 a36 36 0 0 1 -72 0 c0-14 10-24 18-38 6 12 12 16 18 16 6 0 8-16 6-36Z"/>
+          <path d="M60 68 c 10 10 12 16 12 22 a12 12 0 0 1 -24 0 c0-6 4-12 12-22Z"/>
+        </svg>
+        <h3>Обжарка</h3>
+        <p>Каждый вторник, барабан на 12 кг. Первый крэк слышно от кассы — приходите послушать.</p>
+      </article>
+
+      <article class="rpanel">
+        <span class="rpanel__idx">03</span>
+        <svg class="ico" viewBox="0 0 120 120" aria-hidden="true">
+          <ellipse cx="60" cy="34" rx="19" ry="14"/>
+          <path d="M22 58 H98"/>
+          <path d="M32 58 L40 78 M60 58 V80 M88 58 L80 78"/>
+          <path d="M34 94 h6 M50 98 h6 M68 92 h6 M84 100 h4 M42 106 h8 M62 108 h7"/>
+        </svg>
+        <h3>Помол</h3>
+        <p>Мелем в момент заказа. Не раньше. Эти сорок секунд ожидания стоят того, честно.</p>
+      </article>
+
+      <article class="rpanel">
+        <span class="rpanel__idx">04</span>
+        <svg class="ico" viewBox="0 0 120 120" aria-hidden="true">
+          <path d="M26 26 H94 L64 78 H56 Z"/>
+          <path d="M26 42 H94"/>
+          <path d="M60 88 c 7 8 10 12 10 16 a10 10 0 0 1 -20 0 c0-4 3-8 10-16Z"/>
+        </svg>
+        <h3>Пролив</h3>
+        <p>92 °C, 2:45, вода из осмоса с минералами обратно. Бариста считает вслух, если попросить.</p>
+      </article>
+
+      <div class="rpanel rpanel--end">
+        <p class="rpanel__p">И всё это —</p>
+        <h2 class="rpanel__h rpanel__h--big">за<br><span class="nowrap">300&nbsp;₽</span></h2>
+        <a class="btn" href="#place" data-magnet data-cursor="сюда"><span>ГДЕ НАС НАЙТИ</span></a>
+      </div>
+
+    </div>
+  </div>
+  <div class="ritual__progress" aria-hidden="true"><i id="ritualBar"></i></div>
+</section>
+
+<!-- ══════════ ГАЛЕРЕЯ ══════════ -->
+<section class="gallery" id="gallery">
+  <div class="gallery__head">
+    <p class="gallery__eyebrow">КОНДИТЕРСКАЯ · ПЕКАРНЯ</p>
+    <h2 class="gallery__title" data-reveal="lines">Слишком<br>вкусно</h2>
+  </div>
+  <div class="gallery__grid">
+    <figure class="gtile" data-reveal data-cursor="ммм">
+      <picture><source srcset="assets/g2.webp" type="image/webp">
+      <img src="assets/g2.jpg" width="760" height="760" alt="Синнамон-роллы" loading="lazy" decoding="async"></picture>
+    </figure>
+    <figure class="gtile" data-reveal data-cursor="ммм">
+      <picture><source srcset="assets/g1.webp" type="image/webp">
+      <img src="assets/g1.jpg" width="760" height="760" alt="Карамельный соус" loading="lazy" decoding="async"></picture>
+    </figure>
+    <figure class="gtile" data-reveal data-cursor="ммм">
+      <picture><source srcset="assets/g3.webp" type="image/webp">
+      <img src="assets/g3.jpg" width="760" height="760" alt="Мороженое в рожке" loading="lazy" decoding="async"></picture>
+    </figure>
+  </div>
+</section>
+
+<!-- ══════════ МЕСТО ══════════ -->
+<section class="place" id="place">
+  <div class="place__grid">
+    <div class="place__col">
+      <p class="tag tag--light">04 — МЕСТО</p>
+      <h2 class="place__h" data-reveal="lines">Заходи</h2>
+      <p class="place__addr" data-reveal>Санкт-Петербург<br>ул. Рубинштейна, 14<br>первый этаж, зелёная дверь</p>
+      <div class="status" id="status">
+        <span class="status__dot"></span>
+        <span class="status__txt" id="statusTxt">проверяем часы…</span>
+      </div>
+    </div>
+
+    <div class="place__col place__col--hours">
+      <table class="hours">
+        <tbody id="hoursBody">
+          <tr data-day="1"><th>ПН</th><td>08:00 — 21:00</td></tr>
+          <tr data-day="2"><th>ВТ</th><td>08:00 — 21:00</td></tr>
+          <tr data-day="3"><th>СР</th><td>08:00 — 21:00</td></tr>
+          <tr data-day="4"><th>ЧТ</th><td>08:00 — 22:00</td></tr>
+          <tr data-day="5"><th>ПТ</th><td>08:00 — 23:00</td></tr>
+          <tr data-day="6"><th>СБ</th><td>09:00 — 23:00</td></tr>
+          <tr data-day="0"><th>ВС</th><td>09:00 — 20:00</td></tr>
+        </tbody>
+      </table>
+      <a class="btn btn--ghost" href="https://yandex.ru/maps" target="_blank" rel="noopener" data-magnet data-cursor="карта"><span>ПОСТРОИТЬ МАРШРУТ</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ ПОДВАЛ ══════════ -->
+<footer class="foot" id="foot">
+  <div class="foot__logo">
+    <span class="foot__small">МИСС</span>
+    <span class="foot__big" data-split="chars" data-stagger="0.05">ВАНИЛЬКА</span>
+  </div>
+
+  <div class="foot__cards">
+    <div class="fcard" data-reveal><svg viewBox="0 0 120 120" class="ico"><circle cx="60" cy="60" r="38"/><path d="M60 32 v30 l20 12"/></svg><span>08:00 — каждый день</span></div>
+    <div class="fcard" data-reveal><svg viewBox="0 0 120 120" class="ico"><path d="M60 104 S22 74 22 46 a38 38 0 0 1 76 0 c0 28-38 58-38 58Z"/><circle cx="60" cy="46" r="13"/></svg><span>Рубинштейна, 14</span></div>
+    <div class="fcard" data-reveal><svg viewBox="0 0 120 120" class="ico"><rect x="20" y="34" width="80" height="54" rx="10"/><path d="M23 40 60 68 97 40"/></svg><span>hey@missvanilka.ru</span></div>
+  </div>
+
+  <div class="foot__bar">
+    <span><a href="#" data-cursor="↗">TG</a> · <a href="#" data-cursor="↗">VK</a> · <a href="#" data-cursor="↗">IG</a></span>
+    <span>УЛ. РУБИНШТЕЙНА 14</span>
+    <span><a href="tel:+78129000505">+7 (812) 900-05-05</a></span>
+    <span><a href="mailto:hey@missvanilka.ru">HEY@MISSVANILKA.RU</a></span>
+    <span class="foot__cc">© 2026 МИСС ВАНИЛЬКА</span>
+  </div>
+</footer>
+</div><!-- /shell__inner -->
+
+  <button class="shell__scrim" id="shellScrim" type="button" aria-label="Закрыть меню" tabindex="-1"></button>
+</div><!-- /shell -->
+
+<script src="script.js?v=9"></script>
+</body>
+</html>
